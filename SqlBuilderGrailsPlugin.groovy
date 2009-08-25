@@ -27,7 +27,7 @@ Brief description of the plugin.
     	println "SqlBuilder plugin: registering queries"
     	application.config.SqlBuilder.each {
     		SqlBuilder.registerQuery(it.key, it.value)
-    		println "SqlBuilder plugin: registering query '${it.key}': \n\t${SqlBuilder.namedQuery(it.key).toSql()}"
+    		println "SqlBuilder plugin: registering query '${it.key}': \n\t${SqlBuilder.namedQuery(it.key).sql}"
     	}
     	println "SqlBuilder plugin: done registering queries"
     }
@@ -43,7 +43,7 @@ Brief description of the plugin.
     			}
             }
         	println "SqlBuilder plugin: Registered method sqlBuilderService.${queryName}"
-            println "\t" + sqlBuilderService."${queryName}"{}.toSql()
+            println "\t" + sqlBuilderService."${queryName}"{}.sql
     	}
 
     }

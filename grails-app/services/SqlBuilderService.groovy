@@ -10,17 +10,17 @@ class SqlBuilderService {
 
     def eachRow(Query query, Closure closure) {
     	def sql = new Sql(dataSource)
-    	sql.eachRow(query.toSql(), query.parameters, closure)
+    	sql.eachRow(query.sql, query.parameters, closure)
     }
 
     def rows(Query query){
     	def sql = new Sql(dataSource)
-    	return sql.rows(query.toSql(), query.parameters)
+    	return sql.rows(query.sql, query.parameters)
     }
     
     def firstRow(Query query){
     	def sql = new Sql(dataSource)
-    	return sql.firstRow(query.toSql(), query.parameters)
+    	return sql.firstRow(query.sql, query.parameters)
     }
     
 }
